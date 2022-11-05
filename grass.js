@@ -1,7 +1,8 @@
-class Grass {
+class Grass extends Base{
     constructor(x, y) {
-        this.x = x;
-        this.y = y;
+        super(x,y)
+        // this.x = x;
+        // this.y = y;
         this.multiply = 0;
         this.directions = [
             [this.x - 1, this.y - 1],
@@ -28,6 +29,7 @@ class Grass {
         ];
     }
 
+
     chooseCell(character) {
         this.getNewCoordinates ();
         var found = [];
@@ -41,6 +43,7 @@ class Grass {
         }
         return found;
     }
+
 
     mul () {
         this.multiply++;

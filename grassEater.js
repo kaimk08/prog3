@@ -1,7 +1,8 @@
-class GrassEater {
+class GrassEater extends Base {
   constructor(x, y) {
-      this.x = x;
-      this.y = y;
+    super(x,y)
+    //   this.x = x;
+    //   this.y = y;
       this.energy = 8;
       this.directions = [];
   }
@@ -18,6 +19,7 @@ class GrassEater {
       ];
 
   }
+
   chooseCell(character, cartoon) {
       this.getNewCoordinates();
       var found = [];
