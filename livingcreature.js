@@ -1,23 +1,22 @@
 class Base {
-    constructor(x, y){
+    constructor(x, y) {
         this.x = x;
         this.y = y;
         this.multiply = 0;
         this.directions = [
-           [this.x - 1, this.y - 1],
-           [this.x, this.y - 1],
-           [this.x + 1, this.y - 1],
-           [this.x - 1, this.y],
-           [this.x + 1, this.y],
-           [this.x - 1, this.y + 1],
-           [this.x, this.y + 1],
-           [this.x + 1, this.y + 1]
-       ];
- 
+            [this.x - 1, this.y - 1],
+            [this.x, this.y - 1],
+            [this.x + 1, this.y - 1],
+            [this.x - 1, this.y],
+            [this.x + 1, this.y],
+            [this.x - 1, this.y + 1],
+            [this.x, this.y + 1],
+            [this.x + 1, this.y + 1]
+        ];
+
     }
 
     chooseCell(character, cartoon, character2, cartoon2) {
-        this.getNewCoordinates()
         var found = [];
         for (var i in this.directions) {
             var x = this.directions[i][0];
@@ -30,7 +29,7 @@ class Base {
                     found.push(this.directions[i]);
                 } else if (matrix[y][x] == character2) {
                     found.push(this.directions[i]);
-                }else if (matrix[y][x] == cartoon2) {
+                } else if (matrix[y][x] == cartoon2) {
                     found.push(this.directions[i]);
                 }
             }

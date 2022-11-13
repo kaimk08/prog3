@@ -1,9 +1,6 @@
 class Energy extends Base {
-    constructor(x, y) {
-        super(x,y)
-        // this.x = x;
-        // this.y = y;
-        this.multiply = 0;
+  
+    getNewCoordinates() {
         this.directions = [
             [this.x - 1, this.y - 1],
             [this.x, this.y - 1],
@@ -14,12 +11,12 @@ class Energy extends Base {
             [this.x, this.y + 1],
             [this.x + 1, this.y + 1]
         ];
-
     }
+ 
 
     chooseCell(character) {
-        super.chooseCell(character);
-        return found;
+        this.getNewCoordinates()       
+         return super.chooseCell(character);;
     }
 
     mul () {

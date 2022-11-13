@@ -1,49 +1,49 @@
-function generateMatrix(matLength, gr,grEat, pd, bc, eg) {
-let matrix = [];
-for (let i = 0; i < matLength; i++) {
-matrix.push([])
-for (let j = 0; j < matLength; j++) {
-matrix[i].push(0)
-}
-}
-for (let i = 0; i < gr; i++) {
-let x = Math.floor(Math.random()*matLength);
-let y = Math.floor(Math.random()*matLength);
-if(matrix[y][x] == 0) {
-matrix[x][y] = 1;
-}
-}
-for (let i = 0; i < grEat; i++) {
-let x = Math.floor(Math.random()*matLength);
-let y = Math.floor(Math.random()*matLength);
-if(matrix[y][x] == 0) {
-matrix[x][y] = 2;
-}
-}
-for (let i = 0; i < pd; i++) {
-  let x = Math.floor(Math.random()*matLength);
-  let y = Math.floor(Math.random()*matLength);
-  if(matrix[y][x] == 0) {
-  matrix[x][y] = 3;
+function generateMatrix(matLength, gr, grEat, pd, bc, eg) {
+  let matrix = [];
+  for (let i = 0; i < matLength; i++) {
+    matrix.push([])
+    for (let j = 0; j < matLength; j++) {
+      matrix[i].push(0)
+    }
   }
+  for (let i = 0; i < gr; i++) {
+    let x = Math.floor(Math.random() * matLength);
+    let y = Math.floor(Math.random() * matLength);
+    if (matrix[y][x] == 0) {
+      matrix[x][y] = 1;
+    }
+  }
+  for (let i = 0; i < grEat; i++) {
+    let x = Math.floor(Math.random() * matLength);
+    let y = Math.floor(Math.random() * matLength);
+    if (matrix[y][x] == 0) {
+      matrix[x][y] = 2;
+    }
+  }
+  for (let i = 0; i < pd; i++) {
+    let x = Math.floor(Math.random() * matLength);
+    let y = Math.floor(Math.random() * matLength);
+    if (matrix[y][x] == 0) {
+      matrix[x][y] = 3;
+    }
   }
   for (let i = 0; i < bc; i++) {
-    let x = Math.floor(Math.random()*matLength);
-    let y = Math.floor(Math.random()*matLength);
-    if(matrix[y][x] == 0) {
-    matrix[x][y] = 4;
+    let x = Math.floor(Math.random() * matLength);
+    let y = Math.floor(Math.random() * matLength);
+    if (matrix[y][x] == 0) {
+      matrix[x][y] = 4;
     }
-    }
-    for (let i = 0; i < eg; i++) {
-      let x = Math.floor(Math.random()*matLength);
-      let y = Math.floor(Math.random()*matLength);
-      if(matrix[y][x] == 0) {
+  }
+  for (let i = 0; i < eg; i++) {
+    let x = Math.floor(Math.random() * matLength);
+    let y = Math.floor(Math.random() * matLength);
+    if (matrix[y][x] == 0) {
       matrix[x][y] = 5;
-      }
-      }
-return matrix;
+    }
+  }
+  return matrix;
 }
-let matrix = generateMatrix(20, 5, 2, 3, 5, 6)
+let matrix = generateMatrix(20, 60, 15, 1, 1, 1)
 
 var side = 50;
 
@@ -89,7 +89,7 @@ function draw() {
 
       if (matrix[y][x] == 1) {
         fill("green");
-      }else if (matrix[y][x] == 0) {
+      } else if (matrix[y][x] == 0) {
         fill("white");
       } else if (matrix[y][x] == 2) {
         fill("yellow")
