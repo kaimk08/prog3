@@ -1,6 +1,4 @@
 class Grass extends Base{
-  
-
     getNewCoordinates() {
         this.directions = [
             [this.x - 1, this.y - 1],
