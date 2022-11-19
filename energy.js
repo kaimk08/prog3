@@ -1,4 +1,6 @@
-class Energy extends Base {
+var Base = require("./livingcreature")
+
+module.exports = class Energy extends Base {
   
     getNewCoordinates() {
         this.directions = [

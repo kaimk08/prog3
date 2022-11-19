@@ -1,8 +1,8 @@
-class Blackcube extends Base{
+var Base = require("./livingcreature")
+
+module.exports = class Blackcube extends Base{
     constructor(x, y) {
-        super(x,y)
-        // this.x = x;
-        // this.y = y;
+        super(x,y);
         this.energy = 5;
         this.directions = [];
 

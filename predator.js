@@ -1,8 +1,8 @@
-class Predator extends Base{
+var Base = require("./livingcreature")
+
+module.exports = class Predator extends Base{
     constructor(x, y) {
-        super(x,y)
-        // this.x = x;
-        // this.y = y;
+        super(x,y);
         this.energy = 5;
         this.directions = [];
     }

@@ -1,4 +1,6 @@
-class Grass extends Base{
+var Base = require("./livingcreature")
+
+module.exports = class Grass extends Base{
     getNewCoordinates() {
         this.directions = [
             [this.x - 1, this.y - 1],
