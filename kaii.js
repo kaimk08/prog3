@@ -1,3 +1,9 @@
+gr = require("./Grass")
+grEat = require("./GrassEater")
+pd = require("./Predator")
+eg = require("./Energy")
+bc = require("./Blackcube")
+
 function generateMatrix(matLength, gr, grEat, pd, bc, eg) {
   let matrix = [];
   for (let i = 0; i < matLength; i++) {
@@ -53,6 +59,22 @@ let predatorArr = [];
 let blackcubeArr = [];
 let energyArr = [];
 
+
+function weater(){
+  if(weater == winter){
+    weater = "winter"
+  }
+  if(weater == spring){
+    weater = "spring"
+  }
+  if(weater == summer){
+    weater = "summer"
+  }
+  if(weater == autumn){
+    weater = "autumn"
+  }
+}
+
 function setup() {
   frameRate(5);
   createCanvas(matrix[0].length * side + 1, matrix.length * side + 1);
@@ -88,7 +110,15 @@ function draw() {
     for (var x = 0; x < matrix[y].length; x++) {
 
       if (matrix[y][x] == 1) {
-        fill("green");
+        if(weater = winter){
+          fill("gray")
+        }else if (weater = spring){
+          fill("lightgreen")
+        }else if (weater = summer){
+          fill("green")
+        }else if (weater = autumn){
+          fill("goldenrod")
+        }
       } else if (matrix[y][x] == 0) {
         fill("white");
       } else if (matrix[y][x] == 2) {
