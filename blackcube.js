@@ -20,14 +20,21 @@ module.exports = class Blackcube extends Base{
         ];
 
     }
+
+    random(a, b, c, d){
+        let found = this.chooseCell(a, b, c, d);
+        let result = Math.floor(Math.random()*found.length)
+        return found[result];
+    }
+
     chooseCell(character, cartoon, character2, cartoon2) {
         this.getNewCoordinates()
         return super.chooseCell(character, cartoon, character2, cartoon2);
     }
 
     mul () {
-        var emptyCells = this.chooseCell(0);
-        var newCell = random(emptyCells);
+        // var emptyCells = this.chooseCell(0);
+        var newCell = this.random(0);
 
         if(newCell){
             var newX = newCell[0];
@@ -42,8 +49,8 @@ module.exports = class Blackcube extends Base{
 
     move() {
         this.energy--
-        var emptyCells = this.chooseCell(0);
-        var newCell = random(emptyCells);
+        // var emptyCells = this.chooseCell(0);
+        var newCell = this.random(0);
         if(newCell && this.energy >= 0) {
             var newX = newCell[0];
             var newY = newCell[1];
@@ -57,8 +64,8 @@ module.exports = class Blackcube extends Base{
     }
 
     eat() {
-        var emptyCells = this.chooseCell(1, 2, 3, 5);
-        var newCell = random(emptyCells);
+        // var emptyCells = this.chooseCell(1, 2, 3, 5);
+        var newCell = this.random(1, 2, 3, 5);
         if(newCell) {
             this.energy+=4;
             var newX = newCell[0];

@@ -19,6 +19,13 @@ module.exports = class Predator extends Base{
         ];
 
     }
+
+    random(a, b, c){
+        let found = this.chooseCell(a, b, c, d);
+        let result = Math.floor(Math.random()*found.length)
+        return found[result];
+    }
+
     chooseCell(character, cartoon, character1) {
         this.getNewCoordinates()
         var found = [];
@@ -36,8 +43,8 @@ module.exports = class Predator extends Base{
     }
 
     mul() {
-        var emptyCells = this.chooseCell(0);
-        var newCell = random(emptyCells);
+        // var emptyCells = this.chooseCell(0);
+        var newCell = this.random(0);
 
         if (newCell) {
             var newX = newCell[0];
@@ -52,8 +59,8 @@ module.exports = class Predator extends Base{
 
     move() {
         this.energy--
-        var emptyCells = this.chooseCell(0);
-        var newCell = random(emptyCells);
+        // var emptyCells = this.chooseCell(0);
+        var newCell = this.random(0);
         if (newCell && this.energy >= 0) {
             var newX = newCell[0];
             var newY = newCell[1];
@@ -67,8 +74,8 @@ module.exports = class Predator extends Base{
     }
 
     eat() {
-        var emptyCells = this.chooseCell(1, 2, 5);
-        var newCell = random(emptyCells);
+        // var emptyCells = this.chooseCell(1, 2, 5);
+        var newCell = this.random(1, 2, 5);
         if (newCell) {
             this.energy+=7;
             var newX = newCell[0];

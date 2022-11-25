@@ -14,6 +14,12 @@ module.exports = class Grass extends Base{
         ];
     }
 
+    random(a){
+        let found = this.chooseCell(a)
+        let result = Math.floor(Math.random()*found.length)
+        return found[result];
+    }
+
 
     chooseCell(character) {
         var found = [];
@@ -31,8 +37,8 @@ module.exports = class Grass extends Base{
 
     mul () {
         this.multiply++;
-        var emptyCells = this.chooseCell(0);
-        var newCell = random(emptyCells);
+        // var emptyCells = this.chooseCell(0);
+        var newCell = this.random(0);
         
         if(newCell && this.multiply >= 4){
             var newX = newCell[0];
@@ -46,8 +52,8 @@ module.exports = class Grass extends Base{
     }
 
     eat() {
-        var emptyCells = this.chooseCell(5);
-        var newCell = random(emptyCells);
+        // var emptyCells = this.chooseCell(5);
+        var newCell = this.random(5);
         if(newCell) {
             this.multiply+=5;
             var newX = newCell[0];

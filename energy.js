@@ -16,6 +16,13 @@ module.exports = class Energy extends Base {
     }
  
 
+    random(a){
+        let found = this.chooseCell(a);
+        let result = Math.floor(Math.random()*found.length)
+        return found[result];
+    }
+
+
     chooseCell(character) {
         this.getNewCoordinates()       
          return super.chooseCell(character);;
@@ -23,8 +30,8 @@ module.exports = class Energy extends Base {
 
     mul () {
         this.multiply+=3;
-        var emptyCells = this.chooseCell(0);
-        var newCell = random(emptyCells);
+        // var emptyCells = this.chooseCell(0);
+        var newCell = this.random(0);
         
         if(newCell && this.multiply >= 5){
             var newX = newCell[0];

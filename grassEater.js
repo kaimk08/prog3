@@ -20,16 +20,22 @@ module.exports =  class GrassEater extends Base {
   
     }
   
-    chooseCell(ch)
+    random(a){
+        let found = this.chooseCell(a);
+        let result = Math.floor(Math.random()*found.length)
+        return found[result];
+    }
+
+    chooseCell()
     {
-        
+
       this.getNewCoordinates();
-        return super.chooseCell(ch)
+        return super.chooseCell()
     }
   
     mul () {
-        var emptyCells = this.chooseCell(0);
-        var newCell = random(emptyCells);
+        // var emptyCells = this.chooseCell(0);
+        var newCell = this.random(0);
   
         if(newCell){
             var newX = newCell[0];
@@ -44,8 +50,8 @@ module.exports =  class GrassEater extends Base {
   
     move() {
         this.energy--
-        var emptyCells = this.chooseCell(0);
-        var newCell = random(emptyCells);
+        // var emptyCells = this.chooseCell(0);
+        var newCell = this.random(0);
         if(newCell && this.energy >= 0) {
             var newX = newCell[0];
             var newY = newCell[1];
@@ -59,8 +65,8 @@ module.exports =  class GrassEater extends Base {
     }
   
     eat() {
-        var emptyCells = this.chooseCell(1, 5);
-        var newCell = random(emptyCells);
+        // var emptyCells = this.chooseCell(1, 5);
+        var newCell = this.random(1, 5);
         if(newCell) {
             this.energy+=5;
             var newX = newCell[0];
