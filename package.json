@@ -3,6 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "blackcube.js",
+  "dependencies": {
+    "express": "^4.18.2",
+    "socket.io": "^4.5.4"
+  },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
@@ -16,9 +21,5 @@
   "bugs": {
     "url": "https://github.com/kaimk08/prog3/issues"
   },
-  "homepage": "https://github.com/kaimk08/prog3#readme",
-  "dependencies": {
-    "express": "^4.18.2",
-    "socket.io": "^4.5.4"
-  }
+  "homepage": "https://github.com/kaimk08/prog3#readme"
 }

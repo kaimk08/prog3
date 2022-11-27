@@ -30,7 +30,6 @@ module.exports = class Energy extends Base {
 
     mul () {
         this.multiply+=3;
-        // var emptyCells = this.chooseCell(0);
         var newCell = this.random(0);
         
         if(newCell && this.multiply >= 5){
