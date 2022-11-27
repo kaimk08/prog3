@@ -37,7 +37,6 @@ module.exports = class Grass extends Base{
 
     mul () {
         this.multiply++;
-        // var emptyCells = this.chooseCell(0);
         var newCell = this.random(0);
         
         if(newCell && this.multiply >= 4){
@@ -52,7 +51,6 @@ module.exports = class Grass extends Base{
     }
 
     eat() {
-        // var emptyCells = this.chooseCell(5);
         var newCell = this.random(5);
         if(newCell) {
             this.multiply+=5;

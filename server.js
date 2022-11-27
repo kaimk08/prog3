@@ -1,22 +1,15 @@
 var express = require('express');
-
 var app = express();
-
 var server = require('http').createServer(app);
-
 var io = require('socket.io')(server);
-
-var messages = [];
-
 app.use(express.static("."));
-
 app.get('/', function (req, res) {
-
 res.redirect('index.html');
-
 });
 
-server.listen(3000);
+server.listen(3000,()=>{
+  console.log('connection')
+} );
 
 gr = require("./Grass")
 grEat = require("./GrassEater")
@@ -37,7 +30,7 @@ grassArr = [];
  predatorigArr = [];
 
 function generateMatrix (matLength, gr, grEat, pd, bc, eg, pdig) {
-    let matrix = [];
+   
     for (let i = 0; i < matLength; i++) {
       matrix.push([])
       for (let j = 0; j < matLength; j++) {
@@ -89,8 +82,9 @@ function generateMatrix (matLength, gr, grEat, pd, bc, eg, pdig) {
     io.sockets.emit("send matrix", matrix)
   } 
 
-matrix = generateMatrix(20, 60, 15, 1, 5, 1, 3)
+generateMatrix(20, 60, 15, 1, 5, 1, 3)
 
+console.log(matrix)
 
 function createObject(){
   for (var y = 0; y < matrix.length; y++) {
@@ -141,8 +135,11 @@ function game(){
 }
 
 setInterval(game, 500)
-
+function randomb(){
+  generateMatrix(20, 60, 15, 1, 5, 1, 3)
+}
   io.on("connection", function(){
       createObject()
-
+      socket.on("winter", winter);
+      
   })

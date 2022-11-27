@@ -1,4 +1,3 @@
-
 socket = io()
 var side = 50;
 
@@ -20,7 +19,7 @@ function weater(){
 
 function setup() {
   frameRate(5);
-  createCanvas(matrix[0].length * side + 1, matrix.length * side + 1);
+  createCanvas(700, 700);
   background('white');
 }
 
@@ -54,6 +53,19 @@ function draww(matrix) {
       rect(x * side, y * side, side, side);
     }
   }
+}
+
+function winter(){
+  socket.emit("winter")
+}
+function spring(){
+  socket.emit("spring")
+}
+function summer(){
+  socket.emit("summer")
+}
+function autumn(){
+  socket.emit("autumn")
 }
 
 socket.on('send matrix', draww);
