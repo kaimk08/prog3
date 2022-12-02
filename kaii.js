@@ -1,7 +1,6 @@
 socket = io()
 var side = 50;
 
-
 function weater(){
   if(weater == winter){
     weater = "winter"

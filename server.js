@@ -18,7 +18,12 @@ pdig = require("./PredatorIg")
 eg = require("./Energy")
 bc = require("./Blackcube")
 
-
+winter = document.getElementById('winter');
+spring = document.getElementById('spring');
+summer = document.getElementById('summer');
+autumn = document.getElementById('autumn');
+maqrel = document.getElementById('clean');
+randomcharacters = document.getElementById('randomcharacters');
 
  matrix = [];
 
@@ -134,12 +139,43 @@ function game(){
   }
 }
 
-setInterval(game, 500)
-function randomb(){
-  generateMatrix(20, 60, 15, 1, 5, 1, 3)
-}
+
+
+  setInterval(game, 500)
+
+  function maqrel(){
+    for (var y = 0; y < matrix.length; y++) {
+      for (var x = 0; x < matrix[y].length; x++) {
+        if (matrix[y][x] == 1) {
+          matrix[y][x] == 0
+        } else if (matrix[y][x] == 2) {
+          matrix[y][x] == 0
+        } else if (matrix[y][x] == 3) {
+          matrix[y][x] == 0
+        } else if (matrix[y][x] == 4) {
+          matrix[y][x] == 0
+        } else if (matrix[y][x] == 5) {
+          matrix[y][x] == 0
+        } else if (matrix[y][x] == 6) {
+          matrix[y][x] == 0
+      }
+    }
+  }
+  io.sockets.emit("send matrix", matrix)
+  }
+
+  function randomcharacters(){
+    createObject()
+  }
+
   io.on("connection", function(){
       createObject()
       socket.on("winter", winter);
-      
+      socket.on("spring", spring);
+      socket.on("summer", summer);
+      socket.on("autumn", autumn);
+
+      socket.on("clean", maqrel);
+      socket.on("randomcharacters", randomcharacters);
+
   })
